@@ -22,11 +22,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping( value="/", method=RequestMethod.GET)
-	public String mostrarPrincipal(){
+	public String mostrarPrincipal(Model model){
 		List<String> peliculas = new LinkedList<String>();
 		peliculas.add("Rapido y furioso");
 		peliculas.add("El aro 2");
 		peliculas.add("Aliens");
+		model.addAttribute("peliculas", peliculas);
 		return "home";
 	}
 	

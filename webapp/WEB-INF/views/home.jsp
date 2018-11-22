@@ -9,13 +9,17 @@
 <title>Home</title>
 </head>
 <body>
-
+	<header>
+		<h1>Home</h1>
+	</header>
+	<section>
 	<ol>
 		<c:forEach items="${ peliculas }" var="pelicula">
 			<li>${ pelicula } </li>
 		</c:forEach>
 	
 	</ol>
+	</section>
 	
 
 </body>
