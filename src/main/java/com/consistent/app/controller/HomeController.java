@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.consistent.app.models.Peliculas;
+
 import sun.awt.ModalExclude;
 
 @Controller
@@ -23,10 +25,9 @@ public class HomeController {
 	
 	@RequestMapping( value="/", method=RequestMethod.GET)
 	public String mostrarPrincipal(Model model){
-		List<String> peliculas = new LinkedList<String>();
-		peliculas.add("Rapido y furioso");
-		peliculas.add("El aro 2");
-		peliculas.add("Aliens");
+		List<Peliculas> peliculas = new LinkedList<Peliculas>();
+		peliculas.add(new Peliculas("Final Fantasy", "15:00", "A", true));
+		peliculas.add(new Peliculas("Resident", "40:00", "B", true));
 		model.addAttribute("peliculas", peliculas);
 		return "home";
 	}
